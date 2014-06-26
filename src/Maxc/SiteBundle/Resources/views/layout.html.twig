@@ -32,16 +32,7 @@
             </div>
 
             {% block footer %}
-                <div id="footer">
-                    <div class="container">
-                        <ul class="list-inline">
-                           <li><a href="#">About</a></li>
-                        </ul>
-                        <ul class="list-inline">
-		                   <li class="text-muted">{{"now"|date('Y')}} TM</li>
-                        </ul>
-                    </div>
-                </div>
+                {% include "MaxcSiteBundle::footer.html.twig" %}
             {% endblock %}
 {% endblock %}
 

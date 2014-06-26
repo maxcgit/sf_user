@@ -9,13 +9,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/", name="home")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction()
     {
 //        $request->getSession()->getFlashBag()->add('notice', 'Profile updated');
 //        $request->getSession()->getFlashBag()->add('error', 'Profile updated');
-        return array('name' => $name);
+        return array('name' => 'world');
     }
 }

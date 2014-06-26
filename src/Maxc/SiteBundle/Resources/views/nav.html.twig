@@ -7,12 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{# path('home') #}">Name</a>
+      <a class="navbar-brand" href="{{ path('home',{name:1}) }}">Name</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">About</a></li>
+        {%if app.user%}
+          <li><a href="{{path('fos_user_profile_show')}}"><strong>{{ app.user.username }}</strong></a></li>
+          <li><a href="{{path('fos_user_profile_edit')}}">Profile</a></li>
+          <li><a href="{{path('fos_user_security_logout')}}">Logout</a></li>
+        {%else%}
+          <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+          <li><a href="{{ path('fos_user_registration_register') }}">Registration</a></li>
+        {%endif%}
+
       </ul>
+
     </div><!--/.nav-collapse -->
   </div>
 </div>
