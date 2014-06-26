@@ -1,0 +1,5 @@
+maxc_user:
+    resource: "@MaxcUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
