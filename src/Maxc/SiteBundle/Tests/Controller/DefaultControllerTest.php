@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxc\UserBundle\Tests\Controller;
+namespace Maxc\SiteBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

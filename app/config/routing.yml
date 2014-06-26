@@ -1,5 +1,7 @@
-maxc_user:
-    resource: "@MaxcUserBundle/Controller/"
+maxc_site:
+    resource: "@MaxcSiteBundle/Controller/"
     type:     annotation
     prefix:   /
 
+_user_bundle:
+    resource: "@MaxcUserBundle/Resources/config/routing.yml"

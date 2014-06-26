@@ -1,53 +1,5 @@
 {% extends "::base.html.twig" %}
 
-{% block stylesheets %}
-	{{parent()}}
-    {% stylesheets '@MaxcUserBundle/Resources/public/css/*' filter='cssrewrite' %}
-    	<link rel="stylesheet" href="{{ asset_url }}" />
-	{% endstylesheets %}
-{% endblock %}
-
 {% block body %}
-            {% block nav %}
-                {% include "MaxcUserBundle::nav.html.twig" %}
-            {% endblock %}
-            <div class="container">
-                
-                {% for flashMessage in app.session.flashbag.get('notice') %}
-                    <div class="alert alert-info alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                       {{ flashMessage }}
-                   </div>
-                {% endfor %}
-
-                {% for flashMessage in app.session.flashbag.get('error') %}
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                       {{ flashMessage }}
-                   </div>
-                {% endfor %}
-
-                {% block content %}{% endblock %}
-
-            </div>
-
-            {% block footer %}
-                <div id="footer">
-                    <div class="container">
-                        <ul class="list-inline">
-                           <li><a href="#">About</a></li>
-                        </ul>
-                        <ul class="list-inline">
-		                   <li class="text-muted">{{"now"|date('Y')}} TM</li>
-                        </ul>
-                    </div>
-                </div>
-            {% endblock %}
-{% endblock %}
-
-{% block javascripts %}
-  {{parent()}}
-	{% javascripts '@MaxcUserBundle/Resources/public/js/*' %}
-		<script type="text/javascript" src="{{ asset_url }}"></script>
-	{% endjavascripts %}
+	   	{{ block('fos_user_content') }}
 {% endblock %}

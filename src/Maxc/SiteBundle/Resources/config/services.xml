@@ -6,11 +6,11 @@
 
     <!--
     <parameters>
-        <parameter key="maxc_user.example.class">Maxc\UserBundle\Example</parameter>
+        <parameter key="maxc_site.example.class">Maxc\SiteBundle\Example</parameter>
     </parameters>
 
     <services>
-        <service id="maxc_user.example" class="%maxc_user.example.class%">
+        <service id="maxc_site.example" class="%maxc_site.example.class%">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>
