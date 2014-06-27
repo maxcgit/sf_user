@@ -28,6 +28,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+      resources: ['MaxcSiteBundle:Form:fields.html.twig']
 
 # Assetic Configuration
 assetic:
@@ -72,3 +74,6 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: Maxc\UserBundle\Entity\User
+    registration:
+      confirmation:
+        enabled:    true

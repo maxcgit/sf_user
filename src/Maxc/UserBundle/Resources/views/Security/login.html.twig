@@ -4,13 +4,12 @@
 
 {% block fos_user_content %}
 {% if error %}
-    <div class="alert alert-danger alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <div class="alert alert-danger" role="alert">
         {{ error|trans }}
     </div>
 {% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post" role="form" class="col-md-4 col-md-offset-4">
+<form action="{{ path("fos_user_security_check") }}" method="post" role="form">
 	
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 	<div class="form-group">
@@ -26,6 +25,13 @@
 		    <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> {{ 'security.login.remember_me'|trans }}
     </label>
 	</div>
+    <div class="form-group">
+        <a href="{{ path('fos_user_resetting_request') }}">{{ 'form.reset_password'|trans }}</a>
+    </div>
+    <div class="form-group">
     <button type="submit" id="_submit" name="_submit" class="btn btn-default">{{ 'security.login.submit'|trans }}</button>
+    {{ 'form.or'|trans }}
+    <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans }}</a>
+    </div>
 </form>
 {% endblock fos_user_content %}
