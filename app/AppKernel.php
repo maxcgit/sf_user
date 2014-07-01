@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Maxc\UserBundle\MaxcUserBundle(),
             new Maxc\SiteBundle\MaxcSiteBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

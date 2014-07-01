@@ -21,7 +21,8 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures" : "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
-        "stof/doctrine-extensions-bundle": "~1.1@dev"
+        "stof/doctrine-extensions-bundle": "~1.1@dev",
+        "hwi/oauth-bundle": "0.4.*@dev"
 
     },
     "require-dev": {
