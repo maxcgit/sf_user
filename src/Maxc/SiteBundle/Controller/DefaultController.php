@@ -18,4 +18,13 @@ class DefaultController extends Controller
 //        $request->getSession()->getFlashBag()->add('error', 'Profile updated');
         return array('name' => 'world');
     }
+
+    /**
+     * @Route("/about", name="about")
+     * @Template()
+     */
+    public function aboutAction()
+    {
+        return array();
+    }
 }
