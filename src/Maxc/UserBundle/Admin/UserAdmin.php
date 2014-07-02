@@ -41,6 +41,7 @@ class UserAdmin extends Admin
             ->add('enabled')
             ->add('createdAt')
             ->add('updatedAt')
+//            ->add('roles')
         ;
     }
 }
