@@ -7,3 +7,9 @@ services:
             - ~
             - Maxc\UserBundle\Entity\User
             - 'MaxcUserBundle:UserAdmin'
+
+    maxc.registration.form.type:
+        class: Maxc\UserBundle\Form\Type\CaptchaRegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: maxc_captcha_registration }

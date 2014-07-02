@@ -34,3 +34,6 @@ facebook_login:
 
 google_login:
     pattern: /login/check-google
+
+genemu_base64:
+    resource: "@GenemuFormBundle/Resources/config/routing/base64.xml"

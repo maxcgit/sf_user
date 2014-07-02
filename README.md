@@ -14,7 +14,8 @@ User
 
 `bin/console assetic:dump`
 
-`phpunit -c .`
-
 `php composer.phar require vendor/bundle`
 
+`phpunit -c .`
+
+`ab -n 10 user.dev/`

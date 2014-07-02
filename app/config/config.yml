@@ -97,6 +97,8 @@ fos_user:
     firewall_name: main
     user_class: Maxc\UserBundle\Entity\User
     registration:
+      form:
+        type: maxc_captcha_registration
       confirmation:
         enabled:    true
 
@@ -140,3 +142,10 @@ sonata_block:
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
+
+genemu_form:
+    captcha:
+      length: 6
+      font_size: 22
+      width: 160
+      height: 40
