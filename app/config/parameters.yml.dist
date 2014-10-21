@@ -17,8 +17,3 @@ parameters:
     debug_toolbar:          true
     debug_redirects:        false
     use_assetic_controller: true
-
-    facebook_app_id: got_to_developers.facebook.com/docs/facebook-login/v2.0
-    facebook_app_secret: got_to_developers.facebook.com/docs/facebook-login/v2.0
-    google_app_id: go_to_console.developers.google.com/project
-    google_app_secret: go_to_console.developers.google.com/project
