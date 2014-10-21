@@ -19,28 +19,36 @@ class UserAdmin extends Admin
     {
         $formMapper
             ->add('username')
+            ->add('locked')
             ->add('email')
             ->add('enabled')
+            ->add('ip')
+            ->add('ip_hist')
         ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add('id')
             ->add('username')
             ->add('email')
-            ->add('enabled')
+            ->add('ip')
+            ->add('locked')
         ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->add('id')
+            ->add('locked')
             ->addIdentifier('username')
             ->add('email')
             ->add('enabled')
             ->add('createdAt')
             ->add('updatedAt')
+            ->add('ip')
 //            ->add('roles')
         ;
     }
