@@ -13,3 +13,11 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: maxc_captcha_registration }
+
+    maxc_user.last_ip_login_listener:
+        class: Maxc\UserBundle\EventListener\LastIpListener
+        arguments:
+            - @service_container
+            - @fos_user.user_manager
+        tags:
+            - { name: kernel.event_subscriber }

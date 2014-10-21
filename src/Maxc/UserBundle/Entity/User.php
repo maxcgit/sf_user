@@ -29,6 +29,12 @@ class User extends BaseUser
      */
     use TimestampableEntity;
 
+    /** @ORM\Column(type="string", length=15, nullable=true) */
+    protected $ip;
+
+    /** @ORM\Column(type="array", length=255, nullable=true) */
+    protected $ip_hist;
+
     public function __construct()
     {
         parent::__construct();
@@ -43,5 +49,107 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set ip
+     *
+     * @param string $ip
+     * @return User
+     */
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+        $hist = $this->getIpHist();
+        if($hist){
+            if(!in_array($ip, $hist)){
+                array_push($hist, $ip);
+                $this->setIpHist($hist);
+            }
+        }
+        else{
+            $this->setIpHist(array($ip));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get ip
+     *
+     * @return string 
+     */
+    public function getIp()
+    {
+        return $this->ip;
+    }
+
+    /**
+     * Set ip_hist
+     *
+     * @param array $ipHist
+     * @return User
+     */
+    public function setIpHist($ipHist)
+    {
+        $this->ip_hist = $ipHist;
+
+        return $this;
+    }
+
+    /**
+     * Get ip_hist
+     *
+     * @return array 
+     */
+    public function getIpHist()
+    {
+        return $this->ip_hist;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return User
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return User
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }
