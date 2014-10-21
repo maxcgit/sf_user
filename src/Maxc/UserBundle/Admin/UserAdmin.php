@@ -19,9 +19,9 @@ class UserAdmin extends Admin
     {
         $formMapper
             ->add('username')
-            ->add('locked')
+            ->add('locked','choice',array('choices' =>  array(0=>'Off',1=>'On')))
             ->add('email')
-            ->add('enabled')
+            ->add('enabled','choice',array('choices' =>  array(0=>'Off',1=>'On')))
             ->add('ip')
             ->add('ip_hist')
         ;
