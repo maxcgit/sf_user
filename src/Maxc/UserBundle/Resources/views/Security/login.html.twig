@@ -5,7 +5,7 @@
 {% block fos_user_content %}
 {% if error %}
     <div class="alert alert-danger" role="alert">
-        {{ error|trans }}
+        {{ error.messageKey|trans }}
     </div>
 {% endif %}
 
