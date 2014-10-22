@@ -45,3 +45,7 @@ or remote
  `vim app/config/parameters.yml`
  
  `composer self-update; composer update`
+ 
+ APC correct tag 'sf2_user' in  web/app.php
+ 
+ $apcLoader = new ApcClassLoader('sf2_user', $loader);
