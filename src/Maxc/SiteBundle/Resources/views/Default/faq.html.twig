@@ -1,0 +1,25 @@
+{% extends "MaxcSiteBundle::layout.html.twig" %}
+{% block title %}FAQ{% endblock %}
+{% block content %}
+    <h1>FAQ</h1>
+    <div class="panel-group" id="accordion">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        What is this?
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        {{ sitename }} is best site.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -7,3 +7,7 @@ body {
   padding: 10px 0;
   margin-top: 10px;
 }
+
+.form-group img {
+    margin: 15px;
+}

@@ -1,10 +1,12 @@
-<div id="footer">
+<div id="footer" class="well well-sm">
     <div class="container">
-        <ul class="list-inline">
-            <li><a href="{{ path('about') }}">About</a></li>
+        <ul class="list-inline pull-left text-muted">
+            <li><i class="fa fa-copyright"></i> {{"now"|date('Y')}} {{ sitename }}</li>
+            <li>All Rights Reserved</li>
         </ul>
-        <ul class="list-inline">
-            <li class="text-muted">{{"now"|date('Y')}} TM</li>
+        <ul class="list-inline pull-right">
+            <li><a href="{{ path('tos') }}">Terms of Service</a></li>
+            <li><a href="{{ path('privacy') }}">Privacy</a></li>
         </ul>
     </div>
 </div>
