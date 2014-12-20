@@ -4,17 +4,16 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <meta name="description" content="{% block meta_description %}{% endblock %}">
-        <meta name="keyword" content="{% block meta_keyword %}{% endblock %}">
+        <title>{% block title %}{{ sitename }} - Welcome!{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}{{ sitename }}{% endblock %}">
+        <meta name="keyword" content="{% block meta_keyword %}{{ sitename }}{% endblock %}">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block meta %}{% endblock %}
 
         {% block stylesheets %}
-            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-            <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-            <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-            <link href='http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            <link href='http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css' rel='stylesheet' type='text/css'>
              <!--[if lt IE 9]>
               <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
               <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -24,12 +23,14 @@
     </head>
     <body>
 
+        {% include "::ga.html.twig" %}
+
         {% block body %}{% endblock %}
 
         {% block javascripts %}
-            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-            <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
         {% endblock %}
         
     </body>
