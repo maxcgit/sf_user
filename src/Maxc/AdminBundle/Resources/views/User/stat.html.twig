@@ -1,0 +1,65 @@
+{% extends 'SonataAdminBundle:CRUD:base_list.html.twig' %}
+
+{% block list_table %}
+
+    <div class="box box-primary">
+        <div class="box-body table-responsive no-padding">
+
+            <script>window.SONATA_CONFIG=false;</script>
+            <form role="form" class="form-inline" {{ form_enctype(form) }} action="" method="post">
+                <div class="form-group">
+                    {{ form_label(form.from) }}
+                    {{ form_errors(form.from) }}
+                    {{ form_widget(form.from, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.to) }}
+                    {{ form_errors(form.to) }}
+                    {{ form_widget(form.to, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.byhour) }}
+                    {{ form_errors(form.byhour) }}
+                    {{ form_widget(form.byhour, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                {{ form_widget(form._token) }}
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+            <div id="chart"></div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    {% set width = "'100%'" %}
+    {% set height = 200 %}
+    <script>
+        google.load('visualization', '1.0', {'packages':['corechart']});
+
+        google.setOnLoadCallback( function () {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Date');
+            data.addColumn('number', 'Count');
+            data.addRows([
+                {% for item in data %}
+                ['{{ item.oy }}', {{ item.cnt }}],
+                {% endfor %}
+            ]);
+
+            var options = {
+                title: null,
+                width:{{ width|raw }},
+                height:{{ height }}
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
+            chart.draw(data, options);
+        });
+    </script>
+
+{% endblock %}
+
+{% block list_filters %}
+{% endblock %}

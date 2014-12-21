@@ -1,0 +1,5 @@
+services:
+    maxc_admin.block.info:
+        class: Maxc\AdminBundle\Block\InfoBlockService
+        arguments: [ ~, @templating, @doctrine ]
+        tags: [ { name: sonata.block } ]

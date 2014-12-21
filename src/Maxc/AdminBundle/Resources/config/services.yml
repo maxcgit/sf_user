@@ -1,0 +1,13 @@
+services:
+
+    maxc.admin.user:
+        class: Maxc\AdminBundle\Admin\UserAdmin
+        arguments: [~, Maxc\UserBundle\Entity\User, MaxcAdminBundle:User]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: User}
+
+    maxc.admin.param:
+        class: Maxc\AdminBundle\Admin\ParamAdmin
+        arguments: [~, Maxc\AppBundle\Entity\Param, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Param}

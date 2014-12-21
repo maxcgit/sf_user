@@ -9,7 +9,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Maxc\UserBundle\Entity\UserRepository")
  * @ORM\Table(name="users")
  * @UniqueEntity("username", message="Username is already used. Try other")
  * @UniqueEntity("email", message="Email is already used.")

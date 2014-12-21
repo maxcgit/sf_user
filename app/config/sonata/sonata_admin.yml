@@ -1,0 +1,22 @@
+sonata_admin:
+  title: Admin
+  dashboard:
+          blocks:
+            - { position: left, type: sonata.admin.block.admin_list }
+            - { position: right, type: maxc_admin.block.info }
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        sonata.admin.block.search_result:
+            contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.action:
+        sonata.block.service.rss:
+        sonata.block.service.menu:
+
+        #My
+        maxc_admin.block.info:

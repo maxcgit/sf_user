@@ -1,3 +1,8 @@
+maxc_admin:
+    resource: "@MaxcAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
 maxc_site:
     resource: "@MaxcSiteBundle/Controller/"
     type:     annotation

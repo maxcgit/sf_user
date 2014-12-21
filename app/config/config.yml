@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: sonata/sonata_admin.yml }
 
 framework:
     #esi:             ~
@@ -103,19 +104,6 @@ fos_user:
         type: maxc_captcha_registration
       confirmation:
         enabled:    true
-
-sonata_admin:
-    title: Admin
-
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        sonata.admin.block.admin_list:
-            contexts:   [admin]
-
-        sonata.block.service.text:
-        sonata.block.service.action:
-        sonata.block.service.rss:
 
 genemu_form:
     captcha:
