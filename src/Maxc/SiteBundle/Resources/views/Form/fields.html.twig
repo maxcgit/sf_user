@@ -17,3 +17,10 @@
         {% endif %}
     {% endspaceless %}
 {% endblock form_errors %}
+
+{% block button_widget %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+    <button type="{{ type|default('button') }}" class="btn btn-default" {{ block('button_attributes') }}>{{ label|trans({}, translation_domain) }}</button>
+{% endblock button_widget %}
