@@ -6,13 +6,13 @@ User
 
 `php bin/console doctrine:schema:update --force`
  
-`bin/console fos:user:create admin --super-admin` 
+`php bin/console fos:user:create admin --super-admin` 
+
+`php bin/console assetic:dump`
 
 `php bin/console doctrine:fixtures:load`
 
 `php bin/console doctrine:generate:entities MaxcUserBundle`
-
-`bin/console assetic:dump`
 
 `php composer.phar require vendor/bundle`
 
