@@ -12,13 +12,30 @@ User
 
 `php bin/console doctrine:fixtures:load`
 
-`php bin/console doctrine:generate:entities MaxcUserBundle`
+`php bin/console doctrine:generate:entity`
+
+`--entity=MaxcAppBundle:N --format=annotation --fields="title views:integer"`
+
+`php bin/console doctrine:generate:entities MaxcAppBundle`
+
+`php bin/console sonata:admin:generate Maxc\AppBundle\Entity\N`
 
 `php composer.phar require vendor/bundle`
 
 `phpunit -c .`
 
 `ab -n 10 user.dev/`
+
+    Post
+
+    /** @ORM\ManyToOne(targetEntity="PostCat", inversedBy="posts") */
+    private $cat;
+
+    PostCat
+    
+    /** @ORM\OneToMany(targetEntity="Post", mappedBy="cat") */
+    private $posts;
+
 
 New proj
 ========
