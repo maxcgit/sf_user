@@ -111,3 +111,7 @@ genemu_form:
       font_size: 22
       width: 160
       height: 40
+
+knp_paginator:
+    template:
+         pagination: MaxcSiteBundle::paginator-bootstrap.html.twig
