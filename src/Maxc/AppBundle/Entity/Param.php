@@ -91,4 +91,12 @@ class Param
     {
         return $this->val;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName() ? : 'New';
+    }
 }
