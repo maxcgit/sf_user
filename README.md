@@ -12,6 +12,8 @@ User
 
 `php bin/console doctrine:fixtures:load`
 
+`php bin/console davidbadura:fixtures:load`
+
 `php bin/console doctrine:generate:entity`
 
 `--entity=MaxcAppBundle:N --format=annotation --fields="title views:integer"`
